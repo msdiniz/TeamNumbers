@@ -46,11 +46,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Form1.cs">
+    <Compile Include="FormJerseyNumbers.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form1.Designer.cs">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <Compile Include="FormJerseyNumbers.Designer.cs">
+      <DependentUpon>FormJerseyNumbers.cs</DependentUpon>
     </Compile>
     <Compile Include="JerseyNumber.cs" />
     <Compile Include="Program.cs" />
