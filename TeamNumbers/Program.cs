@@ -16,7 +16,8 @@ namespace TeamNumbers
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new FormJerseyNumbers());
+            //Application.Run(new FormJerseyNumbers());
+            Application.Run(new FormTeamNumbers());
         }
     }
 }

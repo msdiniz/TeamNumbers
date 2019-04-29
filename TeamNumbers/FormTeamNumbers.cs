@@ -22,6 +22,7 @@ namespace TeamNumbers
        {new TeamKey(23,Team.Jersey,1), new RetiredTeamNumber("Don Mattingly", 1997)},
        {new TeamKey(42,Team.Jersey,1), new RetiredTeamNumber("Jackie Robinson", 1993)},
        {new TeamKey(44,Team.Jersey,1), new RetiredTeamNumber("Reggie Jackson", 1993)},
+       {new TeamKey(44,Team.Jersey,2), new RetiredTeamNumber("Connie Jamieson", 1986)},
   };
 
         public FormTeamNumbers()
@@ -29,15 +30,38 @@ namespace TeamNumbers
             InitializeComponent();
             foreach (TeamKey key in retiredNumbers.Keys)
             {
-                number.Items.Add(key);
+                number.Items.Add(key.RetiredNumber);
             }
         }
         private void number_SelectedIndexChanged(object sender, EventArgs e)
         {
             Team whichTeam = Team.Jersey;
+            RetiredTeamNumber retiredTeamNumber;
             int copiesOfThisRetiredNumber = retiredNumbers.Keys
                                 .Count(n => n.RetiredNumber == 
                                     (int)number.SelectedItem && n.Team == whichTeam);
+            if (copiesOfThisRetiredNumber==1)
+            {
+                retiredTeamNumber = retiredNumbers[new TeamKey((int)number.SelectedItem, whichTeam, 1)];
+                nameLabel.Text = retiredTeamNumber.Player;
+                yearLabel.Text = retiredTeamNumber.YearRetired.ToString();
+            }
+            else if (copiesOfThisRetiredNumber > 1)
+            {
+                //foreach (retiredNumbers.Keys
+                //                .Where(n => n.RetiredNumber ==
+                //                    (int)number.SelectedItem && n.Team == whichTeam),retiredTeamNumber)
+                //List<var numRetired,var teamName,var copyNumber> listRetiredTeamNumber = 
+                //            retiredNumbers.Keys.Where(n => n.RetiredNumber ==
+                //                                                (int)number.SelectedItem && n.Team == whichTeam).ToList();
+                //{
+
+                //}
+                //retiredNumbers.Keys.Where(n => n.RetiredNumber ==(int)number.SelectedItem && n.Team == whichTeam).ToList();
+                retiredTeamNumber = retiredNumbers[new TeamKey((int)number.SelectedItem, whichTeam, 1)];
+                nameLabel.Text = retiredTeamNumber.Player;
+                yearLabel.Text = retiredTeamNumber.YearRetired.ToString();
+            }
             //Choose retiredNumbers
             //int i=0;
             //do 
