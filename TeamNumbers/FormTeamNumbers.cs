@@ -57,7 +57,7 @@ namespace TeamNumbers
                 //{
 
                 //}
-                //retiredNumbers.Keys.Where(n => n.RetiredNumber ==(int)number.SelectedItem && n.Team == whichTeam).ToList();
+                //List<retiredNumbers> listRetiredTeamNumber=retiredNumbers.Keys.Where(n => n.RetiredNumber ==(int)number.SelectedItem && n.Team == whichTeam).ToList();
                 retiredTeamNumber = retiredNumbers[new TeamKey((int)number.SelectedItem, whichTeam, 1)];
                 nameLabel.Text = retiredTeamNumber.Player;
                 yearLabel.Text = retiredTeamNumber.YearRetired.ToString();
